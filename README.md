@@ -16,7 +16,8 @@ This project offers use cases of `RocketClient`. Such use cases do the work of c
 ```
 
 `RocketKMM` is basically `DTO` model for rocket api - `https://api.spacexdata.com/v4/rockets/`.
- Additional information is available in the [SpaceX API](https://docs.spacexdata.com).
+
+ - Additional information is available in the [SpaceX API](https://docs.spacexdata.com).
 
 `RocketResult` is custom result type (`Success` and `Failure`) used because Swift cannot handle build-in `Result` type and casts it as a `Any?`.
 
