@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "KMMmodule"
+rootProject.name = "mobile-assignment-kmm"
 include(":fetchRockets")
