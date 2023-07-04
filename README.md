@@ -1,5 +1,5 @@
-# fetchRockets
-KMM module for iOS solution application
+# mobile-assignment-kmm
+fetchRockets module for iOS solution application
 
 Simple library in Kotlin Multiplatform Mobile that has REST API requests,
 that are used in our example app for iOS version in Quanti [Mobile assignment](https://github.com/Qase/mobile-assignment)
