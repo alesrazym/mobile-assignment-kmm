@@ -1,14 +1,14 @@
 # mobile-assignment-kmm
-fetchRockets module for iOS solution application
+`fetchRockets` module for solution application.
 
-Simple library in Kotlin Multiplatform Mobile that has REST API requests,
-that are used in our example app for iOS version in Quanti [Mobile assignment](https://github.com/Qase/mobile-assignment)
+Simple library in Kotlin Multiplatform Mobile that provides REST API requests.
 
-KMM is used in both iOS (Swift) and Android (Kotlin) versions of mobile development, its new a inovative way of creating shared code for apps.
-In this case this is shared use case of `RocketClient` that does the background work of creating api request, serializing (parsing) data from `json` to struct/class and then sending
- it into our platform-specific project. 
+Those are used in our example app in Quanti [mobile-assignment](https://github.com/Qase/mobile-assignment).
 
-## API requests: 
+KMM is used for both iOS (Swift) and Android (Kotlin) versions of mobile development. It is a modern way of creating shared code for apps.
+This project provides use cases of `RocketClient`. Such use cases do the work of creating API request, serializing (parsing) data from `json` to `struct/class` and then providing the data to platform-specific project. 
+
+## API requests 
 ```Kotlin 
  fetchAllRockets(): RocketResult<List<RocketKMM>>
  fetchRocketById(rocketId: String): RocketResutl<RocketKMM>
@@ -16,13 +16,13 @@ In this case this is shared use case of `RocketClient` that does the background 
 ```
 
 `RocketKMM` is basically `DTO` model for rocket api - `https://api.spacexdata.com/v4/rockets/`
-  more in [SpaceX API](https://docs.spacexdata.com)
+  more info provided in [SpaceX API](https://docs.spacexdata.com).
 
-`RocketResult` is custom result type (Success and Failure) used because Swift cannot handle build in Result type and casts it as a `Any?`.
+`RocketResult` is custom result type (`Success` and `Failure`) used because Swift cannot handle build-in `Result` type and casts it as a `Any?`.
 
 ## NativeCoroutines
- - All functions are using `@NativeCoroutines` modifier that is from special library: [KMP-Native-Coroutines](https://github.com/rickclephas/KMP-NativeCoroutines.git)
- - This basically creates "new" functions, that are thread-safe. Those functions are called differently.
+ - All functions are using a `@NativeCoroutines` modifier provided via special library: [KMP-Native-Coroutines](https://github.com/rickclephas/KMP-NativeCoroutines.git)
+ - The library basically creates "new" functions, that are thread-safe. Those functions are called differently.
 
 ## How to use it in Swift
 Calling basic functions in Swift is very easy, just declare the struct and then use the functions like so:
@@ -36,9 +36,9 @@ Functions in **NativeCoroutines** are handled this way:
 ```Swift 
  let rockets = try await asyncFunction(for: rocketApi.fetchAllRockets())
 ```
-  note that the `asyncFunction` is from **NativeCoroutines** library that needs to be imported.
+  note that the `asyncFunction` is from the **NativeCoroutines** library that needs to be imported.
 
-## Full implementation in Swift:
+## Full implementation in Swift
 ```Swift 
  do {
       let rockets = try await asyncFunction(for: rocketApi.fetchAllRockets())
