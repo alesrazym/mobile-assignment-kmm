@@ -6,7 +6,7 @@ Simple library in Kotlin Multiplatform Mobile that provides REST API requests.
 Those are used in our example app in Quanti [mobile-assignment](https://github.com/Qase/mobile-assignment).
 
 KMM is used for both iOS (Swift) and Android (Kotlin) versions of mobile development. It is a modern way of creating shared code for apps.
-This project offers use cases of `RocketClient`. Such use cases do the work of creating API request, serializing (parsing) data from `json` to `struct/class` and then providing the data to platform-specific project. 
+This project offers use cases of `RocketClient`. Such use cases do the work of creating API requests, serializing (parsing) data from `json` to `struct/class` and then providing the data to platform-specific projects. 
 
 ## API requests 
 ```Kotlin 
@@ -15,14 +15,14 @@ This project offers use cases of `RocketClient`. Such use cases do the work of c
  fetchFailRockets: RocketResult<RocketException> // Made for testing error handling
 ```
 
-`RocketKMM` is basically `DTO` model for rocket api - `https://api.spacexdata.com/v4/rockets/`.
+`RocketKMM` is basically a `DTO` model for rocket API - `https://api.spacexdata.com/v4/rockets/`.
 
  - Additional information is available in the [SpaceX API](https://docs.spacexdata.com).
 
-`RocketResult` is custom result type (`Success` and `Failure`) used because Swift cannot handle build-in `Result` type and casts it as a `Any?`.
+`RocketResult` is custom result type (`Success` and `Failure`) used because Swift cannot handle built-in `Result` type and casts it as a `Any?`.
 
 ## NativeCoroutines
- - All functions are using a `@NativeCoroutines` modifier provided via special library: [KMP-Native-Coroutines](https://github.com/rickclephas/KMP-NativeCoroutines.git)
+ - All functions are using a `@NativeCoroutines` modifier provided via special library: [KMP-Native-Coroutines](https://github.com/rickclephas/KMP-NativeCoroutines.git).
  - The library basically creates "new" functions, that are thread-safe. Those functions are called differently.
 
 ## How to use it in Swift
