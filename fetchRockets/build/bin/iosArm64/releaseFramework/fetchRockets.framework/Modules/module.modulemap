@@ -1,8 +1,0 @@
-framework module fetchRockets {
-    umbrella header "fetchRockets.h"
-
-    export *
-    module * { export * }
-
-    use Foundation
-}
