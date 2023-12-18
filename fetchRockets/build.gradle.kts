@@ -2,8 +2,8 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("com.chromaticnoise.multiplatform-swiftpackage") version "2.0.3"
-    kotlin("plugin.serialization") version "1.8.21"
-    id("com.google.devtools.ksp") version "1.8.21-1.0.11"
+    kotlin("plugin.serialization") version "1.9.20"
+    id("com.google.devtools.ksp") version "1.9.20-1.0.14"
     id("com.rickclephas.kmp.nativecoroutines") version "1.0.0-ALPHA-8"
 }
 
@@ -20,8 +20,7 @@ kotlin {
         outputDirectory(File(rootDir, "/"))
     }
 
-
-    android {
+    androidTarget {
         compilations.all {
             kotlinOptions {
                 jvmTarget = "1.8"
